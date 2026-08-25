@@ -9,8 +9,21 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:window.history.back()"
+  {{ breadcrumb({
+    items: [
+      {
+        href: "landing",
+        text: "Maternity"
+      },
+      {
+        href: "invites-landing",
+        text: "Invites"
+      },
+      {
+        href: "templates",
+        text: "Templates"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -58,7 +71,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "template-edit",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }

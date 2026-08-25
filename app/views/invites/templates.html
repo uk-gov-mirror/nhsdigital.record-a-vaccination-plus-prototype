@@ -9,8 +9,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:window.history.back()"
+  {{ breadcrumb({
+    items: [
+      {
+        href: "landing",
+        text: "Maternity"
+      },
+      {
+        href: "invites-landing",
+        text: "Invites"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -22,38 +31,67 @@
       <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
 
       {{ button({
-        text: "Add new template"
+        text: "Create new template",
+        href: "template-create-new"
+
       }) }}
 
       <ul class="nhsuk-card-group">
         <li class="nhsuk-card-group__item">
           {{ card({
-            href: "#",
-            primary: "true",
-            clickable: "true",
             heading: "Invite for RSV at 20 weeks",
             headingSize: "m",
-            description: "um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
+            actions: {
+              items: [
+                {
+                  text: "View",
+                  href: "template-detail"
+                },
+                {
+                  text: "Edit",
+                  href: "template-edit"
+                }
+              ]
+            },
+            description: "Um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
             }) }}
         </li>
         <li class="nhsuk-card-group__item">
           {{ card({
-            href: "#",
-            primary: "true",
-            clickable: "true",
             heading: "Invite for RSV at 20 weeks",
             headingSize: "m",
-            description: "um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
+            actions: {
+              items: [
+                {
+                  text: "View",
+                  href: "template-detail"
+                },
+                {
+                  text: "Edit",
+                  href: "template-edit"
+                }
+              ]
+            },
+            description: "Um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
             }) }}
         </li>
         <li class="nhsuk-card-group__item">
           {{ card({
-            href: "#",
-            primary: "true",
-            clickable: "true",
             heading: "Invite for RSV at 20 weeks",
             headingSize: "m",
-            description: "um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
+            actions: {
+              items: [
+                {
+                  text: "View",
+                  href: "template-detail"
+                },
+                {
+                  text: "Edit",
+                  href: "template-edit"
+                }
+              ]
+            },
+            description: "Um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit"
             }) }}
         </li>
       </ul>

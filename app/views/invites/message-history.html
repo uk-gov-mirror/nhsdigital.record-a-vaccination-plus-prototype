@@ -9,8 +9,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ backLink({
-    href: "javascript:window.history.back()"
+  {{ breadcrumb({
+    items: [
+      {
+        href: "landing",
+        text: "Maternity"
+      },
+      {
+        href: "invites-landing",
+        text: "Invites"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -41,7 +50,7 @@
         rows: [
           [
             {
-              text: "RSV reminder"
+              text: "Invite for RSV at 20 weeks"
             },
             {
               text: "Jeremy Blue"
@@ -50,12 +59,12 @@
               text: "18 Aug 2026"
             },
             {
-              html: "<a href='#'>View</a>"
+              html: "<a href='message-detail'>View</a>"
             }
           ],
           [
             {
-              text: "RSV invite"
+              text: "Invite for RSV at 20 weeks"
             },
             {
               text: "Jane Smith"
@@ -64,12 +73,12 @@
               text: "9 Aug 2026"
             },
             {
-              html: "<a href='#'>View</a>"
+              html: "<a href='message-detail'>View</a>"
             }
           ],
           [
             {
-              text: "RSV invite"
+              text: "Invite for RSV at 20 weeks"
             },
             {
               text: "Jane Smith"
@@ -78,7 +87,7 @@
               text: "9 Jul 2026"
             },
             {
-              html: "<a href='#'>View</a>"
+              html: "<a href='message-detail'>View</a>"
             }
           ]
         ]
