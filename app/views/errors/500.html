@@ -1,0 +1,30 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Sorry, there is a problem with the service" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block content %}
+	<div class="nhsuk-grid-row">
+		<div class="nhsuk-grid-column-two-thirds">
+
+			<h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
+
+			<p class="nhsuk-body">To try and solve the problem, you can:</p>
+			<ul class="nhsuk-list nhsuk-list--bullet">
+				<li>refresh this page in your browser</li>
+				<li>go to the <a href="/mvp-patient-upload/landing" class="nhsuk-link">maternity start page</a></li>
+				<li>come back later</li>
+			</ul>
+
+			<p class="nhsuk-body">
+				If the problem continues, email <a href="mailto:england.ravs@nhs.net">england.ravs@nhs.net</a> to contact the team or use <a class="nhsuk-link" href="/feedback-form-1-0-0/" target="_blank">our feedback form</a>.
+			</p>
+
+		</div>
+	</div>
+{% endblock %}
