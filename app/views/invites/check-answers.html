@@ -8,11 +8,20 @@
   {{ pageTitle }} - Record a vaccination - NHS
 {% endblock %}
 
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
+
+      {% include "invites/_upload-date.html" %}
 
       {% include "invites/_bereavement-warning.html" %}
 
@@ -26,15 +35,32 @@
         rows: [
           {
             key: {
-              text: "Template"
+              text: "Template name"
             },
             value: {
-              text: "RSV invitation"
+              text: "Invite for RSV at 20 weeks"
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "message-template",
+                  text: "Change",
+                  visuallyHiddenText: "template"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Message body"
+            },
+            value: {
+              text: "You're invited to get the RSV vaccination during pregnancy to help protect you and your baby. Please contact your maternity team or book online if you are 20 weeks or more."
+            },
+            actions: {
+              items: [
+                {
+                  href: "message-template",
                   text: "Change",
                   visuallyHiddenText: "template"
                 }
@@ -46,12 +72,12 @@
               text: "Method"
             },
             value: {
-              html: "SMS text message"
+              html: "Text message"
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "message-type",
                   text: "Change",
                   visuallyHiddenText: "method"
                 }
@@ -61,7 +87,7 @@
         ]
       }) }}
 
-      <form action="/form-handler" method="post" novalidate>
+      <form action="confirmation" method="post" novalidate>
         <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
             Confirm and send
           </button>

@@ -21,14 +21,15 @@
 
       <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
 
+      {% include "invites/_upload-date.html" %}
+
       {% include "invites/_bereavement-warning.html" %}
 
       {% include "invites/_filtered-patient-list.html" %}
-      
-      <br>
 
       {{ button({
-        text: "Start message"
+        text: "Start message",
+        href: "message-type"
       }) }}
 
     </div>

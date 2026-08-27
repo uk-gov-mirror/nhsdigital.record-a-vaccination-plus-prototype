@@ -8,6 +8,12 @@
   {{ pageTitle }} - Record a vaccination - NHS
 {% endblock %}
 
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -39,6 +45,11 @@
             text: "NHS App"
           }
         ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-template"
       }) }}
 
     </div>
