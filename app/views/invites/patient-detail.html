@@ -8,7 +8,7 @@
   {{ pageTitle }} - Record a vaccination - NHS
 {% endblock %}
 
-{% block beforeContent %}
+{# {% block beforeContent %}
   {{ breadcrumb({
     items: [
       {
@@ -21,7 +21,14 @@
       }
     ]
   }) }}
+{% endblock %} #}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
+
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -82,7 +89,7 @@
               text: "RSV"
             },
             value: {
-              html: "<strong class='nhsuk-tag nhsuk-tag--yellow'>Eligible</strong>  from 11 Feb 2026"
+              html: "<strong class='nhsuk-tag nhsuk-tag--yellow'>Eligible</strong> from 11 Feb 2026"
             }
           },
           {
@@ -90,7 +97,7 @@
               text: "Pertussis"
             },
             value: {
-              html: "<strong class='nhsuk-tag nhsuk-tag--green'>Vaccinated</strong>"
+              html: "<strong class='nhsuk-tag nhsuk-tag--yellow'>Eligible</strong> from 18 Nov 2025"
             }
           },
           {
@@ -98,7 +105,7 @@
               text: "Flu"
             },
             value: {
-              html: "<strong class='nhsuk-tag nhsuk-tag--green'>Vaccinated</strong>"
+              html: "<strong class='nhsuk-tag nhsuk-tag--grey'>Not yet eligible</strong> From 1 Sep 2026"
             }
           },
           {
