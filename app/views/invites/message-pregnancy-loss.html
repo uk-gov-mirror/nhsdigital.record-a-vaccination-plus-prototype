@@ -1,0 +1,61 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Termination, miscarriage or baby loss" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
+
+      {% include "invites/_upload-date.html" %}
+
+      {% include "invites/_bereavement-warning.html" %}
+
+      {# <p>Please check that you have not included anyone who has recently had a termination, miscarriage or baby loss.</p> #}
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: "Have you check the patient list is up to date?",
+            size: "m",
+            isPageHeading: false
+          }
+        },
+        hint: {
+          text: ""
+        },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I've checked"
+          },
+          {
+            value: "no",
+            text: "No, I need to review the patient list"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-template-type"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
