@@ -9,17 +9,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "landing",
-        text: "Maternity"
-      },
-      {
-        href: "invites-landing",
-        text: "Invites"
-      }
-    ]
+  {{ backLink({
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
