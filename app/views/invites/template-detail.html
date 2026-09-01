@@ -9,21 +9,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "landing",
-        text: "Maternity"
-      },
-      {
-        href: "invites-landing",
-        text: "Invites"
-      },
-      {
-        href: "templates",
-        text: "Templates"
-      }
-    ]
+  {{ backLink({
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -38,24 +25,16 @@
         rows: [
           {
             key: {
-              text: "Title"
+              text: "Template name"
             },
             value: {
               text: "Invite for RSV at 20 weeks"
-            }
-          },
-          {
-            key: {
-              text: "Version"
-            },
-            value: {
-              text: "7"
             },
             actions: {
               items: [
                 {
-                  href: "#",
-                  text: "View history",
+                  href: "template-edit",
+                  text: "Change",
                   visuallyHiddenText: "name"
                 }
               ]
@@ -73,6 +52,23 @@
                 {
                   href: "template-edit",
                   text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Version"
+            },
+            value: {
+              text: "7"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "View history",
                   visuallyHiddenText: "name"
                 }
               ]
