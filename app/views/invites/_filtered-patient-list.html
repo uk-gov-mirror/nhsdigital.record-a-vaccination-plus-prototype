@@ -1,12 +1,12 @@
 {{ summaryList({
         card: {
-          heading: "Filtered patient list",
+          heading: "Recipients",
           headingSize: "m",
           actions: {
             items: [
               {
                 text: "Edit",
-                href: "#"
+                href: "/maternity-patient-list-2-0-0/patients"
               }
             ]
           }
@@ -17,23 +17,34 @@
               text: "Patients"
             },
             value: {
-              text: "354"
+              text: "238"
             }
           },
           {
             key: {
-              text: "Filters"
+              text: "RSV status"
             },
             value: {
-              html: "RSV status: Eligible<br>Weeks pregnant: 20 weeks"
+              html: tag({
+                text: "Eligible",
+                colour: "yellow"
+                })
             }
           },
           {
             key: {
-              text: "Excluded"
+              text: "Weeks pregnant"
             },
             value: {
-              html: "22 patients have no mobile number"
+              html: "26 weeks"
+            }
+          },
+          {
+            key: {
+              text: "Opted out"
+            },
+            value: {
+              html: "4 patients <br> (automatically removed)"
             }
           }
         ]
