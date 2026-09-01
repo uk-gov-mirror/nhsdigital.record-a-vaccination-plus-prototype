@@ -1,0 +1,55 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Check the patient list" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
+
+      {% include "invites/_upload-date.html" %}
+
+      {% include "invites/_bereavement-warning.html" %}
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: "Is the main patient list ready?",
+            size: "m"
+          }
+        },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "yes",
+            text: "Yes - continue with the invite"
+          },
+          {
+            value: "no",
+            text: "No - edit the patient list first"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-vaccination"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
