@@ -1,0 +1,53 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Send now or later?" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: pageTitle,
+            size: "l",
+            isPageHeading: true
+          }
+        },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "now",
+            text: "Send message now",
+            hint: {
+              text: "You'll be able to check everything before sending"
+            }
+          },
+          {
+            value: "later",
+            text: "Schedule for later"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: ""
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
