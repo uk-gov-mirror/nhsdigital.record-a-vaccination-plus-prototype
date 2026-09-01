@@ -2,20 +2,15 @@
 
 {% set currentSection = "plus" %}
 
-{% set pageTitle = "Invites and reminders" %}
+{% set pageTitle = "Manage invites and reminders" %}
 
 {% block pageTitle %}
   {{ pageTitle }} - Record a vaccination - NHS
 {% endblock %}
 
 {% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "landing",
-        text: "Maternity"
-      }
-    ]
+  {{ backLink({
+    href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
@@ -29,12 +24,12 @@
       <ul class="nhsuk-grid-row nhsuk-card-group">
         <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
           {{ card({
-            href: "message-start",
+            href: "/maternity-patient-list-2-0-0/patients",
             primary: "true",
             clickable: "true",
             heading: "Send",
             headingSize: "m",
-            description: "Send an invite or reminder to a group of patients"
+            description: "Filter patient list then send an invitation or reminder"
             }) }}
         </li>
         <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
