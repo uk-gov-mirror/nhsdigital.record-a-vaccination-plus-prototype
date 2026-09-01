@@ -2,7 +2,7 @@
 
 {% set currentSection = "plus" %}
 
-{% set pageTitle = "Check answers" %}
+{% set pageTitle = "Check details and send" %}
 
 {% block pageTitle %}
   {{ pageTitle }} - Record a vaccination - NHS
@@ -21,18 +21,70 @@
 
       <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
 
-      {% include "invites/_upload-date.html" %}
+      {# {% include "invites/_upload-date.html" %} #}
 
-      {% include "invites/_bereavement-warning.html" %}
+      {# {% include "invites/_bereavement-warning.html" %} #}
 
       {% include "invites/_filtered-patient-list.html" %}
 
       {{ summaryList({
         card: {
-          heading: "Message",
+          heading: "Invitation details",
           headingSize: "m"
         },
         rows: [
+        {
+            key: {
+              text: "Pregnancy loss"
+            },
+            value: {
+              html: "Check complete"
+            },
+            actions: {
+              items: [
+                {
+                  href: "message-pregnancy-loss",
+                  text: "Change",
+                  visuallyHiddenText: "Pregnancy loss"
+                }
+              ]
+            }
+          }
+          ,
+        {
+            key: {
+              text: "Invitation or reminder"
+            },
+            value: {
+              html: "Invitation"
+            },
+            actions: {
+              items: [
+                {
+                  href: "message-type",
+                  text: "Change",
+                  visuallyHiddenText: "Invitation or reminder"
+                }
+              ]
+            }
+          },
+        {
+            key: {
+              text: "Type"
+            },
+            value: {
+              html: "Text message"
+            },
+            actions: {
+              items: [
+                {
+                  href: "message-type",
+                  text: "Change",
+                  visuallyHiddenText: "method"
+                }
+              ]
+            }
+          },
           {
             key: {
               text: "Template name"
@@ -63,23 +115,6 @@
                   href: "message-template",
                   text: "Change",
                   visuallyHiddenText: "template"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Method"
-            },
-            value: {
-              html: "Text message"
-            },
-            actions: {
-              items: [
-                {
-                  href: "message-type",
-                  text: "Change",
-                  visuallyHiddenText: "method"
                 }
               ]
             }
