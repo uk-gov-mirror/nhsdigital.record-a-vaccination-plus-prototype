@@ -1,0 +1,54 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Which vaccination would you like to invite patients to?" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: pageTitle,
+            size: "l",
+            isPageHeading: true
+          }
+        },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "rsv",
+            text: "RSV"
+          },
+          {
+            value: "pertussis",
+            text: "Pertussis"
+          },
+          {
+            value: "Flu",
+            text: "Flu"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-patient-group"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
