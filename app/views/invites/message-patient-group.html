@@ -1,0 +1,53 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Which patient group?" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: pageTitle,
+            size: "l",
+            isPageHeading: true
+          }
+        },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "preset",
+            text: "Standard patient group for RSV invites",
+            hint: {
+              html: "Eligible for RSV, 28 to 36 weeks pregnant, not invited before"
+            }
+          },
+          {
+            value: "custom",
+            text: "Custom group"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-reminders"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
