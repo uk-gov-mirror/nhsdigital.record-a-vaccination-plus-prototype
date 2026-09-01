@@ -2,7 +2,7 @@
 
 {% set currentSection = "plus" %}
 
-{% set pageTitle = "Send a message" %}
+{% set pageTitle = "Create invitation or reminder" %}
 
 {% block pageTitle %}
   {{ pageTitle }} - Record a vaccination - NHS
@@ -21,15 +21,15 @@
 
       <h1 class="nhsuk-heading-l">{{ pageTitle }}</h1>
 
-      {% include "invites/_upload-date.html" %}
+      {# {% include "invites/_upload-date.html" %} #}
 
-      {% include "invites/_bereavement-warning.html" %}
+      {# {% include "invites/_bereavement-warning.html" %} #}
 
       {% include "invites/_filtered-patient-list.html" %}
 
       {{ button({
-        text: "Start message",
-        href: "message-type"
+        text: "Continue",
+        href: "message-pregnancy-loss"
       }) }}
 
     </div>
