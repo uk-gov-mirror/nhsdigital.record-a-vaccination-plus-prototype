@@ -79,6 +79,19 @@
             ]
           }) }}
 
+          {{ checkboxes({
+            idPrefix: "invitesAndReminders",
+            name: "invitesAndReminders",
+            fieldset: { legend: { text: "Invites and reminders", classes: "nhsuk-fieldset__legend nhsuk-u-font-weight-bold" } },
+            classes: "nhsuk-checkboxes--small",
+            items: [
+              { value: "inviteSent", text: "Invite sent" },
+              { value: "reminderSent", text: "Reminder sent" },
+              { value: "optedOut", text: "Opted out" }
+
+            ]
+          }) }}
+
           {# Weeks pregnant #}
           {{ checkboxes({
             idPrefix: "weeks-pregnant",
