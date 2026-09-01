@@ -1,0 +1,53 @@
+{% extends 'layouts/ravs-plus-layout-1-maternity.html' %}
+
+{% set currentSection = "plus" %}
+
+{% set pageTitle = "Add automatic reminder?" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} - Record a vaccination - NHS
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ radios({
+        fieldset: {
+          legend: {
+            text: pageTitle,
+            size: "l",
+            isPageHeading: false
+          }
+        },
+        hint: {
+              text: "Automatic reminders will be sent out every week, until the patient is vaccinated or becomes ineligible"
+            },
+        idPrefix: "example-hints",
+        name: "exampleHints",
+        items: [
+          {
+            value: "yes",
+            text: "Yes, send automatic reminders"
+          },
+          {
+            value: "no",
+            text: "No automatic reminders"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        href: "message-schedule"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
