@@ -148,6 +148,13 @@
 
 </details>
 
+{% if data.wipScenario == "A" %}
+  {{ warningCallout({
+    heading: "Important",
+    text: "All patients are eligible for a flu vaccination from 1 September 2026. We can only show a patient is vaccinated if they received their vaccination through the NHS. Always check if a patient has been vaccinated privately or abroad. "
+  }) }}
+{% endif %}
+
 <table class="nhsuk-table nhsuk-table--sortable nhsuk-table-responsive" data-module="nhsuk-table">
   <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Patients <span class="nhsuk-u-visually-hidden">(Column headers are sortable)</span></caption>
   <thead class="nhsuk-table__head">

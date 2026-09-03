@@ -61,6 +61,9 @@
       <span class="nhsuk-u-visually-hidden">Information: </span>
       <p>Vaccination information is updated overnight and not in real time. For a patient’s eligibility status to change, their vaccination must be recorded in RAVS or a GP system.</p>
       <p>Weeks pregnant and eligibility status will update automatically over time for each patient. To change who is on your list, you will need to upload a new CSV file.</p>
+      {% if data.wipScenario == "B" %}
+        <p>All patients are eligible for a flu vaccination from 1 September 2026. We can only show a patient is vaccinated if they received their vaccination through the NHS. Always check if a patient has been vaccinated privately or abroad.</p>
+      {% endif %}
     </div>
 
   </div>
